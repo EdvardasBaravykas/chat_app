@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+#messages {
+  height: 400px;
+}
+
+.send .form-control {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 250px;
+}
+
+.send .btn.btn-primary {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-msg {
+  height: 80vh;
+  overflow-y: scroll;
+}
+.chat-msg .message {
+  min-height: 59px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+.chat-msg .message .content-container {
+  display: inline-block;
+  position: relative;
+}
+.chat-msg .message .content-container .content {
+  background-color: #eee;
+  padding: 10px 15px;
+  border-radius: 15px;
+  inline-size: auto;
+  max-inline-size: 200px;
+  overflow-wrap: break-word;
+}
+.chat-msg .message .content-container .author {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #777;
+  margin-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  right: 0;
+}
+.chat-msg .message.me .content-container {
+  display: inline-block;
+  position: relative;
+  left: 100%;
+  transform: translateX(-100%);
+}
+.chat-msg .message.me .content-container .content {
+  background-color: #007bff;
+  color: white;
+}

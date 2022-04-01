@@ -1,0 +1,11 @@
+<%= turbo_include_tags %>
+<div class="message-me">
+  <div class="content-container">
+    <div class="content">
+      <%= message.content %> 
+    </div>
+    <div class="author">
+      <%= message.user.email %>
+    </div>
+  </div>
+</div>

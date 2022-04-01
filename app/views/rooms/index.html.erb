@@ -1,0 +1,27 @@
+<%= turbo_include_tags %>
+<h1>Rooms</h1>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <div>
+        <%= render 'form', room: Room.new%>
+      </div>
+      <div class='mt-3'>
+     <% @rooms.each do |room| %>
+          <div class="card" >
+          <div class="card-body" > 
+            
+            <%= link_to room.name , room, data: { turbo: true }, class: 'room' %>
+
+          </div>
+        </div>
+    <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+

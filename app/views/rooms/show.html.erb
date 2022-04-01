@@ -1,0 +1,27 @@
+
+
+<%= turbo_include_tags %>
+<%= javascript_tag %>
+
+<div id="user-id" data-user-id="<%= current_user.id  %>"></div>
+<div id="room-id" data-room-id="<%= @room.try(:id)  %>"></div>
+
+<h5>
+  Logged in as: 
+  <%= current_user.email  %>
+</h5>
+
+<h1>
+  <%= @room.name %>
+</h1>
+
+<div class='chat-msg' id="messages">
+  <%= render @room.messages %>
+</div>
+
+<%= turbo_frame_tag 'new_message', src: new_room_message_path(@room), target:'_top' %>
+
+
+<div class="back">
+  <%= link_to 'Back', root_path, :class => "btn btn-secondary" %>
+</div>
