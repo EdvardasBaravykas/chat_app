@@ -1,10 +1,5 @@
-
-
-<%= turbo_include_tags %>
-<%= javascript_tag %>
-
 <div id="user-id" data-user-id="<%= current_user.id  %>"></div>
-<div id="room-id" data-room-id="<%= @room.try(:id)  %>"></div>
+<div id="room-id" data-room-id="<%= @room.id %>"></div>
 
 <h5>
   Logged in as: 
@@ -19,7 +14,24 @@
   <%= render @room.messages %>
 </div>
 
-<%= turbo_frame_tag 'new_message', src: new_room_message_path(@room), target:'_top' %>
+<%# turbo_frame_tag 'new_message', src: new_room_message_path(@room) %>
+
+<%= turbo_frame_tag 'new_message' do %>
+  <%= form_with model: [@room, @new_message] do |form| %>
+
+    <div class="send">
+      <div>
+        <%= form.text_field :content, :class => "form-control", :placeholder => "Aa" %>
+      </div>
+      
+      <div>
+        <%= form.submit 'Send', id: 'submit', :class => "bg-blue-500 btn btn-primary" %> 
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+
 
 
 <div class="back">

@@ -5,11 +5,14 @@
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
     "autoprefixer": "^10.4.4",
+    "chokidar": "^3.5.3",
     "esbuild": "^0.14.28",
+    "esbuild-rails": "^1.0.3",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.23"
+  },
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
   }
-
-  
 }
-

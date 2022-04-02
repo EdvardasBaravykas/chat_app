@@ -1,5 +1,4 @@
-<%= turbo_include_tags %>
 <%= form_with model: room, url: rooms_path, method: :post do |form| %>
   <%= form.text_field :name, class: 'form-control' %>
-  <%= form.submit 'New Room', class: 'btn btn-primary mt-2' %>
+  <%= form.submit 'New Room', class: 'btn bg-blue-500 btn-primary mt-2' %>
 <% end %>
