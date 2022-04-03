@@ -18,6 +18,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @new_message = Message.new(room: @room, user: current_user)
   end
 
   private

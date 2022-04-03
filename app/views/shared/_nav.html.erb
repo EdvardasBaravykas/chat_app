@@ -6,7 +6,7 @@
         <% if user_signed_in? %>
 
           <li class="nav-item">
-            <%= button_to 'Log out', destroy_user_session_path, method: :delete, form: { 'data-turbo': 'false' }, class: 'btn btn-danger' %>
+            <%= button_to 'Log out', destroy_user_session_path, method: :delete, form: { 'data-turbo': 'false' }, class: 'btn btn-danger bg-red-500' %>
           </li>
 
         <% else %>

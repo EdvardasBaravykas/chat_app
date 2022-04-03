@@ -1,3 +1,59 @@
+#messages {
+  height: 400px;
+}
+
+.send .form-control {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 250px;
+}
+
+.send .btn.btn-primary {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-msg {
+  height: 80vh;
+  overflow-y: scroll;
+}
+.chat-msg .message {
+  min-height: 59px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+.chat-msg .message .content-container {
+  display: inline-block;
+  position: relative;
+}
+.chat-msg .message .content-container .content {
+  background-color: #eee;
+  padding: 10px 15px;
+  border-radius: 15px;
+  inline-size: auto;
+  max-inline-size: 200px;
+  overflow-wrap: break-word;
+}
+.chat-msg .message .content-container .author {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #777;
+  margin-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  right: 0;
+}
+.chat-msg .message.me .content-container {
+  display: inline-block;
+  position: relative;
+  left: 100%;
+  transform: translateX(-100%);
+}
+.chat-msg .message.me .content-container .content {
+  background-color: #007bff;
+  color: white;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,3 +73,5 @@
  *= require_tree .
  *= require_self
  */
+
+
