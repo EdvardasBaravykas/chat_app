@@ -5,6 +5,10 @@ class RoomsController < ApplicationController
   def index
     @rooms = Room.all
   end
+  
+  def show
+    @new_message = Message.new(room: @room, user: current_user)
+  end
 
   def new
     @room = Room.new
@@ -15,10 +19,6 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to root_path
     end
-  end
-
-  def show
-    @new_message = Message.new(room: @room, user: current_user)
   end
 
   private

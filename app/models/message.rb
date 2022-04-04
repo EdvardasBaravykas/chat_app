@@ -5,4 +5,5 @@ class Message < ApplicationRecord
 
   validates :content, presence: true
 
+  broadcasts_to :room, inserts_by: :prepend
 end
