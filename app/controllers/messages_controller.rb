@@ -8,22 +8,34 @@ class MessagesController < ApplicationController
 
   def create
     @message = @room.messages.new(messages_params)
+    @message.user = current_user
+
+    @message.save
+
+    # respond_to do |format|
+    #   if @message.save
+    #     format.turbo_stream
+    #     format.html { redirect_to @room, notice: "Message was successfully created." }
+    #   else
+    #     format.html { render :new }
+    #   end
+    # end
 
 
-    mine = ApplicationController.render(
-      partial: 'messages/mine', 
-      locals: { message: @message } 
-    )
+    # mine = ApplicationController.render(
+    #   partial: 'messages/mine', 
+    #   locals: { message: @message } 
+    # )
 
-    theirs = ApplicationController.render(
-      partial: 'messages/theirs', 
-      locals: { message: @message } 
-    )
+    # theirs = ApplicationController.render(
+    #   partial: 'messages/theirs', 
+    #   locals: { message: @message } 
+    # )
 
-    if @message.save
-      ActionCable.server.broadcast "room_channel_#{@message.room_id}", {mine: mine, theirs: theirs, message: @message}
-      redirect_to @room
-    end
+    # if @message.save
+      # ActionCable.server.broadcast "room_channel_#{@message.room_id}", {mine: mine, theirs: theirs, message: @message}
+      # redirect_to @room
+    # end
   end
 
   private

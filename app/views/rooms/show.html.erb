@@ -1,3 +1,5 @@
+<%= turbo_stream_from @room %>
+
 <div id="user-id" data-user-id="<%= current_user.id  %>"></div>
 <div id="room-id" data-room-id="<%= @room.id %>"></div>
 
@@ -8,9 +10,11 @@
 
 <h1>
   <%= @room.name %>
+
 </h1>
 
-<div class='chat-msg' id="messages">
+
+<div id="messages" class="border p-4 rounded-lg overflow-y-scroll">
   <%= render @room.messages %>
 </div>
 
