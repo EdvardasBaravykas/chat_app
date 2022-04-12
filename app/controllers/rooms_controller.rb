@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_room, only: %i[ show edit update destroy ]
   
-  before_action :set_status
+ after_action :set_status, if: :user_signed_in?
 
 
 
