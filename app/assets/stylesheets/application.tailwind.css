@@ -2,6 +2,11 @@
   height: 400px;
 }
 
+.mb-2.border-b.py-2 {
+  max-inline-size: 200px;
+  overflow-wrap: break-word;
+}
+
 .send .form-control {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -12,29 +17,32 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
+/* 
 .chat-msg {
   height: 80vh;
   overflow-y: scroll;
 }
+
 .chat-msg .message {
   min-height: 59px;
   margin-bottom: 15px;
   margin-right: 10px;
-}
+} */
+/* 
 .chat-msg .message .content-container {
   display: inline-block;
   position: relative;
-}
-.chat-msg .message .content-container .content {
+} */
+
+/* .chat-msg .message .content-container .content {
   background-color: #eee;
   padding: 10px 15px;
   border-radius: 15px;
   inline-size: auto;
   max-inline-size: 200px;
   overflow-wrap: break-word;
-}
-.chat-msg .message .content-container .author {
+} */
+/* .chat-msg .message .content-container .author {
   font-size: 0.8rem;
   font-style: italic;
   color: #777;
@@ -48,10 +56,43 @@
   position: relative;
   left: 100%;
   transform: translateX(-100%);
-}
-.chat-msg .message.me .content-container .content {
+} */
+/* .chat-msg .message.me .content-container .content {
   background-color: #007bff;
   color: white;
+} */
+
+.icon-container {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.status-circle {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: gray;
+  border: 2px solid white;
+
+  left: 0.5rem;
+  position: absolute;
+}
+
+.status-container {
+  display: flex;
+  justify-content: start;
+  padding-top: 1rem;
+  overflow: none;
+  position: relative;
+}
+
+h5 {
+  padding: 1rem 1rem;
+}
+
+h1 {
+  padding: 1rem 1rem;
 }
 
 @tailwind base;
@@ -73,5 +114,3 @@
  *= require_tree .
  *= require_self
  */
-
-
