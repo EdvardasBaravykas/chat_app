@@ -1,0 +1,18 @@
+<div  class="mb-2 border-b py-2">
+    <div>
+      <%= message.content %>
+    </div>
+ 
+
+  <div class = "status-container">
+      <div class="text-xs"><%= message.user.email %>
+      </div>
+      <div class="icon-container">
+        <%= turbo_stream_from "user_status" %>
+        <div>
+          <%= render "shared/status", user: message.user %>
+        </div>
+      </div>
+  </div>
+</div>
+
