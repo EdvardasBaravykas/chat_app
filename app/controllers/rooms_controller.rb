@@ -1,9 +1,15 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_room, only: %i[ show edit update destroy ]
+  
+  before_action :set_status
+
+
+
 
   def index
     @rooms = Room.all
+    current_user.update(status: "offline") if current_user
   end
   
   def show
@@ -12,6 +18,7 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
+    
   end
 
   def create
@@ -29,6 +36,10 @@ class RoomsController < ApplicationController
 
   def rooms_params
     params.require(:room).permit(:name).merge(user_id: current_user.id)
+  end
+
+  def set_status
+    current_user.update(status: "online") if current_user    
   end
 
 end

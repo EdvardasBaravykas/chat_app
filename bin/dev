@@ -6,4 +6,4 @@
 #   gem install foreman
 # fi
 
-overmind start -f Procfile.dev '$@'
+foreman start -f Procfile.dev

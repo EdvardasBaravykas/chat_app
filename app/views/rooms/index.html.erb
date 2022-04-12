@@ -1,4 +1,10 @@
-<h1>Room to wrist lock</h1>
+<h1>Room to wrist lock
+</h1>
+
+<h5>
+  Logged in as: 
+  <%= current_user.email  %>
+</h5>
 
 <div class="container-fluid">
   <div class="row">
@@ -11,7 +17,7 @@
           <div class="card" >
           <div class="card-body" > 
             
-            <%= link_to room.name , room, data: { turbo: true }, class: 'room' %>
+            <%= link_to room.name , room, class: 'room' %>
 
           </div>
         </div>
@@ -20,6 +26,3 @@
     </div>
   </div>
 </div>
-
-
-

@@ -1,11 +1,17 @@
-<div class="message mb-3">
+<%# <div class="message mb-3">
   <div class="content-container">
     <div class="content">
       <%= message.content %> 
     </div>
     <div class="author">
       <%= message.user.email %> 
+      <div class="icon-container">
+        <%= turbo_stream_from "user_status" %>
+        <div>
+          <%= render "shared/status", user: user %>
+        </div>
+      </div>
     </div>
     <div></div>
   </div>
-</div>
+</div> %>
